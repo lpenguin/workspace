@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/modules.js"></script>
+    <script src="/static/js/parser.js"></script>
+    <script>
+        $(function(){
+
+
+
+
+            function send_task(task){
+                $.ajax({
+                    type: "POST",
+                    url: '/json/task/add/',
+                    data: task,
+                    dataType: "json",
+                    success: function(data){
+                        alert(data.status)
+                    }
+                })
+            }
+
+            $("#button_send").click(function(){
+                var params = modules.parser.parse_args($("#text_command").val());
+                var action = params.arguments.shift();
+                var text = params.arguments.join(' ');
+                var task = {
+                    project_name: params.options.p,
+                    text: text,
+                    action: action
+                };
+
+                send_task(task);
+
+            });
+            workspace_handler = function(){ alert('handler')};
+
+
+        })
+    </script>
+</head>
+<body>
+    Project name <br />
+    <input type="text" id="text_project_name" /><br>
+    Command<br />
+    <textarea id="text_command"></textarea><br>
+    <button id="button_send">Send</button>
+
+
+</body>
+</html>
