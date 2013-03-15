@@ -105,7 +105,7 @@ ROOT_URLCONF = 'wkspc.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'wkspc.wsgi.application'
 
-TEMPLATE_DIRS = ( '../static/js/templates',)
+TEMPLATE_DIRS = ( 'templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

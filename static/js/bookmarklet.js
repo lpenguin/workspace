@@ -7,6 +7,6 @@
  */
 javascript:(function(){
     var script=document.createElement('script');
-    script.src='http://127.0.0.1:8000/static/js/jsonp.js';
+    script.src='http://127.0.0.1:8000/static/js/jsonp.js?__rnd='+Math.random()*10000;
     document.body.appendChild(script);
 })()

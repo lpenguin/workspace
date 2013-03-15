@@ -6,6 +6,7 @@ from django.template import Context, loader
 from models import *
 import json
 def task_add(request):
+
     try:
         project_name = request.POST["project_name"]
         text = request.POST["text"]
