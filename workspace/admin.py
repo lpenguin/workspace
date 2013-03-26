@@ -4,6 +4,9 @@ from models import *
 
 
 admin.site.register(Tag)
-admin.site.register(Project)
-admin.site.register(Task)
+admin.site.register(Workspace)
+admin.site.register(Todo)
+admin.site.register(Note)
+admin.site.register(Entry)
+admin.site.register(Link)
 
